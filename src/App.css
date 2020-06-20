@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border:none;
+}
+body{
+  background-color: #f2f2f2;
+}
+
+.home{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card {
+  margin-top: .5rem;
+  max-width: 30%;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: end;
+}
+.card img{
+  max-width:100% ;
+  width: 100%;
+  float: left;
+  height: 160px;
+  object-fit: cover;
+}
+.card p, .card h4{
+  padding: 5px;
+  font-size: 100%;
+  background-color: #f2f2f2;
+}
+
+.card h5{
+  padding: 5px 0;
+  padding-right: 5px;
+}
+form, .search_box{
+  background-color: green;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  position: relative;
+  align-items: center;
+
+
+}
+
+.search_rusult, .search_rusult_form{
+  width: 100%;
+  height: auto;
+}
+.search_rusult_form input{
+  margin:auto;
+  margin: .5rem auto;
+
+}
+.title {
+  width: 100%;
+  text-align: end;
+  margin: 10px;
+  display: flex;
+justify-content: space-between;
+flex-direction: row-reverse;
+}
+.title .more_link{
+ font-size: 11px;
+ color: blue;
+ align-self: flex-end;
+}
+ .search__result .card{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+.search__result .card .details{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.search__result .card .details .book_details{
+  align-self: flex-end;
+}
+.search__result .card img{
+  width: 30%;
+  align-self: flex-end;
+}
+
+.search_box a, .search_rusult a{
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+
+.search_box .search__icon, .search_rusult .search__icon{
+ width: 20px;
+ top:2rem;
+ right: 1.5rem;
+ position: absolute;
+
+}
+.search_rusult_form .search__icon{
+  top: 1.5rem;
+}
+ input{
+  align-self: center;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: end;
+    width: 95%;
+   
+  padding: 1rem;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
+  padding-right: 2.7rem;
+
+}
+
+.search_box h3{
+  width: 95%;
+  margin-left: 3%;
+  color: white;
+}
