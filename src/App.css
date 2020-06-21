@@ -6,13 +6,29 @@
 }
 body{
   background-color: #f2f2f2;
+  width: 100%;
+}
+.home__contener{
+  margin-bottom: 1rem;
 }
 
+.home__contener aside{
+  display: none;
+}
 .home{
   width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+.cards__contener{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cards {
+  display: flex;
+  overflow: auto;
 }
 .card {
   margin-top: .5rem;
@@ -21,10 +37,10 @@ body{
   border-radius: 3px;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-align: end;
+  margin: 0 .5rem;
 }
 .card img{
-  max-width:100% ;
-  width: 100%;
+  width: 120px;
   float: left;
   height: 160px;
   object-fit: cover;
@@ -63,7 +79,6 @@ form, .search_box{
 
 }
 .title {
-  width: 100%;
   text-align: end;
   margin: 10px;
   display: flex;
@@ -79,6 +94,7 @@ flex-direction: row-reverse;
   display: flex;
   flex-direction: column;
   max-width: 100%;
+  margin: .5rem;
 }
 .search__result .card .details{
   display: flex;
@@ -95,6 +111,7 @@ flex-direction: row-reverse;
 .search_box a, .search_rusult a{
   display: flex;
   width: 100%;
+  text-decoration:none;
   position: relative;
 }
 
@@ -118,13 +135,60 @@ flex-direction: row-reverse;
    
   padding: 1rem;
   border-radius: 3px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.2); 
   padding-right: 2.7rem;
 
 }
 
 .search_box h3{
   width: 95%;
-  margin-left: 3%;
   color: white;
+}
+
+
+@media screen and (min-width: 770px) {
+  body{
+    background-color: white;
+  }
+  .home__contener{
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+.home__contener aside{
+  display: flex;
+  width: 25%;
+  height: 100vh;
+  border-left: 1px solid rgba(0,0,0,0.1);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.home__content{
+  width: 75%;
+  padding-right: 2rem;
+  position: absolute;
+  left: 0;
+}
+
+.cards::-webkit-scrollbar {    display: none;}
+form, .search_box{
+  background: none;
+  box-shadow: none;
+  height: unset;
+  margin-bottom: 1.5rem;
+}
+.search_box h3{
+  display: none;
+}
+.search_box a{
+  width: 300px;
+  align-self: flex-end;
+}
+.search_box a input{
+  border-radius: 30px;
+
+}
+
 }
