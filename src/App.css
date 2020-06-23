@@ -22,8 +22,8 @@ body {
 }
 .cards__contener {
   width: 100%;
-  margin-bottom: 1rem;
-  display: flex;
+/*  margin-bottom: 1rem;
+*/  display: flex;
   flex-direction: column;
 }
 
@@ -71,13 +71,13 @@ body {
 }
 form,
 .search_box {
-  background-color: green;
-  width: 100%;
-  height: 20vh;
-  display: flex;
+/*  background-color: green;
+*/  width: 100%;
+/*  height: 20vh;
+*/  display: flex;
+margin-bottom: 1rem;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   position: relative;
   align-items: center;
 }
@@ -145,7 +145,7 @@ form,
 
 .search_rusult .speak__button svg{
   position: absolute;
-  width: 15px;
+  width: 12px;
 }
 .search_rusult .speak__button svg path{
  fill:#4f4f4f;
@@ -185,13 +185,18 @@ form,
 
 .search_box .search__icon,
 .search_rusult .search__icon {
-  width: 21px;
+  width: 18px;
   top: 2rem;
   right: 1.5rem;
   position: absolute;
 }
+
+.search_rusult .search__icon .back__link{
+  display: unset;
+  color: #4f4f4f;
+}
 .search_rusult_form .search__icon {
-  top: 1.3rem;
+  top: 1.4rem;
 }
 input {
   align-self: center;
@@ -208,7 +213,8 @@ input {
 
 .search_box h3 {
   width: 95%;
-  color: white;
+  color: green;
+  margin-top: 15px
 }
 
 @media screen and (min-width: 770px) {

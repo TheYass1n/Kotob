@@ -15,8 +15,8 @@ const SearchRusults = () => {
 			window.SpeechRecognition || window.webkitSpeechRecognition;
 
 		let speechRecognition = new SpeechRecognition();
-		speechRecognition.lang = 'en-US' || 'ar'
-/*		speechRecognition.continuous = true;
+/*		speechRecognition.lang = 'en-US' || 'ar'
+*//*		speechRecognition.continuous = true;
 */
 		speechRecognition.start();
 		speechRecognition.onstart = () => {
@@ -100,17 +100,11 @@ const SearchRusults = () => {
 								></path>
 							</svg>
 						</p>
-						<i className="search__icon">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 19 20"
-							>
-								<path
-									fill-rule="evenodd"
-									stroke-width=".2"
-									d="M13.788 13.551a7.376 7.376 0 002.053-5.126 7.376 7.376 0 00-2.174-5.25A7.373 7.373 0 008.421 1a7.367 7.367 0 00-5.247 2.175A7.382 7.382 0 001 8.425c0 1.983.772 3.848 2.174 5.25A7.373 7.373 0 008.42 15.85a7.36 7.36 0 004.638-1.629l2.94 3.21c.98 1.07 1.141 1.409 1.141 1.409a.492.492 0 00.7.03.495.495 0 00.03-.699l-4.082-4.62zm-11.8-5.126c0-3.548 2.886-6.435 6.432-6.435 3.546 0 6.43 2.887 6.43 6.435 0 3.548-2.884 6.435-6.43 6.435s-6.432-2.887-6.432-6.435z"
-								></path>
-							</svg>
+						<i  className="search__icon">
+						<Link className="back__link" to="/">
+							<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="long-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-long-arrow-right fa-w-14"><path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z" class=""></path></svg>
+
+						</Link>
 						</i>
 						<input
 							onChange={handleChange}
@@ -160,6 +154,13 @@ const SearchRusults = () => {
 										</p>
 									) : null}
 
+                                    {item.volumeInfo.publisher ? (
+										<span>
+											{<b>دار النشر: </b>}{" "}
+											{item.volumeInfo.publisher}
+										</span>
+									) : null}
+
 									{item.volumeInfo.publishedDate ? (
 										<span>
 											{<b>تاريخ النشر: </b>}{" "}
@@ -190,6 +191,7 @@ const SearchRusults = () => {
 									}}
 								/>
 							) : null}
+							<span>{item.volumeInfo.description}</span>
 
 							<div></div>
 						</div>
