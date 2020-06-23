@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const useFetch = (url, options) => {
   const [response, setResponse] = React.useState(null);
@@ -17,3 +17,4 @@ export const useFetch = (url, options) => {
   }, []);
   return { response, error };
 };
+
