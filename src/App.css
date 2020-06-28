@@ -9,6 +9,11 @@ body {
 }
 .home__contener {
   margin-bottom: 1rem;
+  overflow-x: hidden;
+}
+
+.home__content{
+  height: fit-content;
 }
 
 .home__contener aside {
@@ -52,17 +57,18 @@ body {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
-.card p,
-.card h4 {
+.card p {
   padding: 5px;
   font-size: 14px;
   font-weight: 800;
+  color: #635e5ea8;
   text-align: right;
   padding-top: 5px;
 }
 .card span {
   font-size: 12px;
   float: right;
+  color: #635e5ea8;
 }
 
 .card h5 {
@@ -75,7 +81,7 @@ form,
 */  width: 100%;
 /*  height: 20vh;
 */  display: flex;
-margin-bottom: 1rem;
+margin-bottom:7px;
   flex-direction: column;
   justify-content: center;
   position: relative;
@@ -88,6 +94,7 @@ margin-bottom: 1rem;
   width: 100%;
     height: auto;
     position: sticky;
+    z-index: 10;
     background: green;
     top: 0;
 }
@@ -99,13 +106,14 @@ margin-bottom: 1rem;
   text-align: end;
   margin: 10px;
   font-family: auto;
+  color: #0000009e;
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
 }
 .title .more_link {
   font-size: 11px;
-  color: blue;
+  color: #0000009e;
   align-self: flex-end;
 }
 .more_link svg {
@@ -118,6 +126,10 @@ margin-bottom: 1rem;
   margin: 0.5rem;
   padding: 0.5rem;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.search__result .card span, .search__result .card p{
+  color: black;
 }
 
 .search__result .card .read__link {
@@ -133,7 +145,7 @@ margin-bottom: 1rem;
   border-radius: 30px;
   margin-left: auto;
 }
-.search_rusult  .speak__button{
+  .speak__button{
     padding: 20px;
     position: absolute;
     display: flex;
@@ -142,12 +154,15 @@ margin-bottom: 1rem;
     align-self: center;
     align-items: center;
 }
+.search_box .speak__button{
+  top:1.2rem;
+}
 
-.search_rusult .speak__button svg{
+ .speak__button svg{
   position: absolute;
   width: 12px;
 }
-.search_rusult .speak__button svg path{
+ .speak__button svg path{
  fill:#4f4f4f;
 }
 .search__result .card .read__link svg{
@@ -194,6 +209,8 @@ margin-bottom: 1rem;
 .search_rusult .search__icon .back__link{
   display: unset;
   color: #4f4f4f;
+  padding: 14px;
+  padding-left: 0;
 }
 .search_rusult_form .search__icon {
   top: 1.4rem;
@@ -207,16 +224,27 @@ input {
 
   padding: 1rem;
   border-radius: 3px;
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   padding-right: 2.7rem;
 }
 
 .search_box h3 {
   width: 95%;
-  color: green;
+  color: #4f4f4f;
   margin-top: 15px
 }
 
+
+.Info{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+    top: 0;
+    z-index: 20;
+    bottom: 0;
+    background: white;
+
+}
 @media screen and (min-width: 770px) {
   body {
     background-color: white;
@@ -262,7 +290,54 @@ input {
   }
 }
 
+/******************** modal*********************/
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000003a;
+  transition: opacity 0.2s ease;
+}
+
+.modal {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: blue;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  border-radius: 2px;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 8px 3px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal button {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px #0000003a;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.562);
+}
 
 
 /**************** animation ********************/

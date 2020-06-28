@@ -191,7 +191,6 @@ const SearchRusults = () => {
 									}}
 								/>
 							) : null}
-							<span>{item.volumeInfo.description}</span>
 
 							<div></div>
 						</div>

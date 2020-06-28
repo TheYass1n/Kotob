@@ -1,10 +1,19 @@
-import React from "react";
+import React,{ useState } from "react";
 import { useFetch } from "../Components/http/http";
 import SearchBox from "../Components/searchbox";
 import SreachRusult from "../Components/searchruslut";
+import Info from "../Components/info/index.js";
+
 
 
 function HOME() {
+
+  const [show, setShow] = useState(false);
+  const openModal = () => setShow(true);
+  const closeModal = () => setShow(false);
+
+  const [showInfo, setShowInfo] = useState(false)
+  
   const res = useFetch(
     "https://www.googleapis.com/books/v1/volumes?q=كافكا+علي+الشاطئ&download=epub&key=AIzaSyDPEB6OF1CbUKLIsJqI-2deQJcBZJ1yuDE",
     {}
@@ -17,18 +26,42 @@ function HOME() {
   console.log("dog", dogName);
   const imageUrl = res.response.message;
 
+
+  const onInfoClick =() =>{
+    setShowInfo(true)
+  }
+
+
+  const onInfoClose = () => {
+    setShowInfo(false)
+  }
+
   return (
     <>
+
       <section className="home__contener">
+        <Info onInfoClose={onInfoClose} show={showInfo} />
+
+
         <aside>
           <h2>
-            Book<span>Map</span>
-            
+            Bookular
           </h2>
         </aside>
         <section className="home__content">
           <div className="home">
-            <SearchBox />
+            <SearchBox  onInfoClick={onInfoClick}/>
+
+            <div className="catogre">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+<div></div>
+            <div></div>
+
+
+            </div>
             <section className="cards__contener">
               <h4 className="title">
                 الاكثر مبعيا{" "}
@@ -78,7 +111,7 @@ function HOME() {
 
             <section className="cards__contener">
               <h4 className="title">
-                الاكثر مبعيا{" "}
+                رويات كلاسيكية {" "}
                 <a className="more_link">
                   <svg
                     aria-hidden="true"
@@ -125,7 +158,7 @@ function HOME() {
 
             <section className="cards__contener">
               <h4 className="title">
-                الاكثر مبعيا{" "}
+                 تاريخ{" "}
                 <a className="more_link">
                   <svg
                     aria-hidden="true"
