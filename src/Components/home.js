@@ -3,16 +3,19 @@ import { useFetch } from "../Components/http/http";
 import SearchBox from "../Components/searchbox";
 import SreachRusult from "../Components/searchruslut";
 import Info from "../Components/info/index.js";
+import { Text } from '../Components/multi-lang/Language';
+
 
 
 
 function HOME() {
 
   const [show, setShow] = useState(false);
+  const [showInfo, setShowInfo] = useState(false)
+
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
 
-  const [showInfo, setShowInfo] = useState(false)
   
   const res = useFetch(
     "https://www.googleapis.com/books/v1/volumes?q=كافكا+علي+الشاطئ&download=epub&key=AIzaSyDPEB6OF1CbUKLIsJqI-2deQJcBZJ1yuDE",
@@ -92,15 +95,15 @@ function HOME() {
                       alt="avatar"
                     />
                     <p>
-                      {book.volumeInfo.title.length > 10
-                        ? book.volumeInfo.title.substring(0, 10) + "..."
+                      {book.volumeInfo.title.length > 16
+                        ? book.volumeInfo.title.substring(0, 16) + "..."
                         : book.volumeInfo.title}
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 10
-                        ? book.volumeInfo.authors.substring(0, 10) + "..."
-                        : book.volumeInfo.authors}
+                      {book.volumeInfo.authors.length > 16
+                        ? book.volumeInfo.authors[0].substring(0, 16) + "..."
+                        : book.volumeInfo.authors[0]}
                     </span>
 
                     <div></div>
@@ -139,15 +142,15 @@ function HOME() {
                       alt="avatar"
                     />
                     <p>
-                      {book.volumeInfo.title.length > 10
-                        ? book.volumeInfo.title.substring(0, 10) + "..."
+                      {book.volumeInfo.title.length > 16
+                        ? book.volumeInfo.title.substring(0, 16) + "..."
                         : book.volumeInfo.title}
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 10
-                        ? book.volumeInfo.authors.substring(0, 10) + "..."
-                        : book.volumeInfo.authors}
+                      {book.volumeInfo.authors.length > 16
+                        ? book.volumeInfo.authors[0].substring(0, 16) + "..."
+                        : book.volumeInfo.authors[0]}
                     </span>
 
                     <div></div>
@@ -186,15 +189,15 @@ function HOME() {
                       alt="avatar"
                     />
                     <p>
-                      {book.volumeInfo.title.length > 10
-                        ?  book.volumeInfo.title.substring(0, 10) + "..."
+                      {book.volumeInfo.title.length > 14
+                        ?  book.volumeInfo.title.substring(0, 14) + "..."
                         : book.volumeInfo.title}
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 10
-                        ? book.volumeInfo.authors.substring(0, 10) + "..."
-                        : book.volumeInfo.authors}
+                      {book.volumeInfo.authors.length > 14
+                        ? book.volumeInfo.authors[0].substring(0, 14) + "..."
+                        : book.volumeInfo.authors[0]}
                     </span>
 
                     <div></div>

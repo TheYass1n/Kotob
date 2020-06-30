@@ -2,6 +2,9 @@ import React,{ useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Info from '../Components/openInfo';
 
+import { Text } from '../Components/multi-lang/Language';
+
+
 
 
 
@@ -47,12 +50,14 @@ const SearchBox = (props) => {
 
 	let rusluts = response
   console.log("rusluts ==== ", rusluts)
+  // get user selected lang from localstorage
+  const SelectedLang = localStorage.getItem('selectedLang');
     return (
         <>
         <form onSubmit={handleSubmit}>
         <div className="search_box">         
 
-          <h3>            BOOKULAR
+          <h3>       <Text tid="logo" />
           <Info onInfoClick={props.onInfoClick} onInfoClose={props.onInfoClose} />
       
 
@@ -83,7 +88,7 @@ const SearchBox = (props) => {
             </p>
           <input 
           onChange={handleChange} 
-          placeholder='ابحث عن كتاب, مؤلف او دار نشر'
+          placeholder= {SelectedLang == "ar" ? 'ابحث عن كتاب, مؤلف, او دار نشر' : "search"}
           type='txt'/>
           </Link>
           

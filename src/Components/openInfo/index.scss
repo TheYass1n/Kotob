@@ -5,10 +5,10 @@
   fill: #fff;
   opacity: 0;
   position: absolute;
-  right: 8px;
+  right: 3px;
   top: 18px;
   transform: translateY(-30px);
-  transition: transform .2s cubic-bezier(.165, .84, .44, 1), opacity .2s ease-out;
+  /*transition: transform .2s cubic-bezier(.165, .84, .44, 1), opacity .2s ease-out;*/
   width: 34px;
   will-change: opacity, transform;
 
@@ -19,7 +19,7 @@
 
   svg {
     width: 20px;
-    fill:#4f4f4f;
+    fill:var(--icons-color);
 
   }
 }
