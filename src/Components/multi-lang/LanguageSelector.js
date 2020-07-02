@@ -21,6 +21,8 @@ export default function LanguageSelector() {
 
   return (
     <div className="lang__selector__contener">
+    <p>Choose the language you prefer</p>
+    <div className='lang__btn'>
       {languageOptions.map(item => (
         <button className="lang__selector"
         onClick={handleLanguageChange}
@@ -32,6 +34,7 @@ export default function LanguageSelector() {
           {item.text}
         </button>
       ))}
+   </div>
     </div>
   );
 };

@@ -2,11 +2,11 @@ import en from './en';
 import ar from './ar';
 
 export const dictionaryList = {
-  en,
-  ar
+  ar,
+  en
 };
 
 export const languageOptions = [
-  { id: 'en', text: 'English'},
-  { id: 'ar', text: 'عربي' }
+  { id: 'ar', text: 'عربي' },
+  { id: 'en', text: 'English'}
 ];

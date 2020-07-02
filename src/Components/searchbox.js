@@ -88,7 +88,7 @@ const SearchBox = (props) => {
             </p>
           <input 
           onChange={handleChange} 
-          placeholder= {SelectedLang == "ar" ? 'ابحث عن كتاب, مؤلف, او دار نشر' : "search"}
+          placeholder= {SelectedLang == "en" ? "search book, author, or puplsher " :  'ابحث عن كتاب, مؤلف, او دار نشر' }
           type='txt'/>
           </Link>
           

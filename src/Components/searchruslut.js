@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Text } from '../Components/multi-lang/Language';
+
+
+const SelectedLang = localStorage.getItem('selectedLang');
+
 
 const SearchRusults = () => {
 	const [searchQ, setSearchQ] = React.useState("");
@@ -15,10 +20,15 @@ const SearchRusults = () => {
 			window.SpeechRecognition || window.webkitSpeechRecognition;
 
 		let speechRecognition = new SpeechRecognition();
-/*		speechRecognition.lang = 'en-US' || 'ar'
-*//*		speechRecognition.continuous = true;
-*/
-		speechRecognition.start();
+
+		if (SelectedLang === "en") {
+			speechRecognition.lang = 'en-US' 
+		}else{
+			speechRecognition.lang = "ar"
+		}
+
+/*  	    speechRecognition.continuous = true;
+*/		speechRecognition.start();
 		speechRecognition.onstart = () => {
 			setAnimation(true);
 		};
@@ -76,6 +86,8 @@ const SearchRusults = () => {
 	}
 
 	let rusluts = response;
+
+
 	console.log("rusluts ==== ", rusluts);
 	return (
 		<>
@@ -108,20 +120,20 @@ const SearchRusults = () => {
 						</i>
 						<input
 							onChange={handleChange}
-							placeholder="ابحث عن كتاب, مؤلف او دار نشر"
+							placeholder={SelectedLang == "en" ? "search book, author, or puplsher " :  'ابحث عن كتاب, مؤلف, او دار نشر' }
 							type="txt"
 						/>
 					</a>
 				</div>
 			</form>
-			{animation ? <div className="loading-container no-content">
+			{animation ? <div dir={SelectedLang == "en" ? `${"rtl"}` : `${"ltr"}`} className="loading-container no-content">
           <div className="loading">
             <div className="loading-bar"></div>
             <div className="loading-bar"></div>
             <div className="loading-bar"></div>
             <div className="loading-bar"></div>
           </div>
-          			<div className="lestning">... تحدث الان </div>
+          			<div className="lestning"><Text tid="speakNow"/> </div>
 
           </div>
 
@@ -130,7 +142,7 @@ const SearchRusults = () => {
 			{rusluts ? (
 				<div className="search__result">
 					{rusluts.map((item) => (
-						<div key={item.id} className="card">
+						<div dir={SelectedLang == "en" ? `${"rtl"}` : `${"ltr"}`} key={item.id} className="card">
 							<div className="details">
 								<img
 									src={
@@ -143,27 +155,26 @@ const SearchRusults = () => {
 								/>
 								<div className="book_details">
 									<h4>
-										{"العنوان: " +
-											"" +
-											item.volumeInfo.title}
+										{<b> <Text tid="title"/>  : </b>}
+									    {item.volumeInfo.title}
 									</h4>
 									{item.volumeInfo.authors ? (
-										<p>
-											{<b>الكاتب : </b>}{" "}
+										<span>
+											{<b> <Text tid="author" /> : </b>}{" "}
 											{item.volumeInfo.authors}
-										</p>
+										</span>
 									) : null}
 
                                     {item.volumeInfo.publisher ? (
 										<span>
-											{<b>دار النشر: </b>}{" "}
+											{<b><Text tid="publisher" /> : </b>}{" "}
 											{item.volumeInfo.publisher}
 										</span>
 									) : null}
 
 									{item.volumeInfo.publishedDate ? (
 										<span>
-											{<b>تاريخ النشر: </b>}{" "}
+											{<b> <Text tid="publishedDate" /> : </b>}{" "}
 											{item.volumeInfo.publishedDate}
 										</span>
 									) : null}
@@ -173,7 +184,7 @@ const SearchRusults = () => {
 										href={item.volumeInfo.previewLink}
 									>
 										{" "}
-										قراء
+										<Text tid="read" />
 										<svg
 											focusable="false"
 											xmlns="http://www.w3.org/2000/svg"

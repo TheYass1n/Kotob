@@ -4,6 +4,9 @@ import SearchBox from "../Components/searchbox";
 import SreachRusult from "../Components/searchruslut";
 import Info from "../Components/info/index.js";
 import { Text } from '../Components/multi-lang/Language';
+import LinearProgress from '@material/react-linear-progress';
+import '@material/react-linear-progress/dist/linear-progress.css';
+
 
 
 
@@ -18,16 +21,21 @@ function HOME() {
 
   
   const res = useFetch(
-    "https://www.googleapis.com/books/v1/volumes?q=كافكا+علي+الشاطئ&download=epub&key=AIzaSyDPEB6OF1CbUKLIsJqI-2deQJcBZJ1yuDE",
+    "https://www.googleapis.com/books/v1/volumes?q=subject:fiction&key=AIzaSyDPEB6OF1CbUKLIsJqI-2deQJcBZJ1yuDE",
     {}
   );
-  console.log("rspon ==== ", res);
+
+  
+  console.log("History ==== ", res);
   if (!res.response) {
-    return <div>Loading...</div>;
+    return  <LinearProgress  buffer={0.9} indeterminate={true}  />;
   }
+
+  //get the Languagen that user choose
+  const SelectedLang = localStorage.getItem('selectedLang');
+
   const dogName = res.response.items;
   console.log("dog", dogName);
-  const imageUrl = res.response.message;
 
 
   const onInfoClick =() =>{
@@ -42,7 +50,7 @@ function HOME() {
   return (
     <>
 
-      <section className="home__contener">
+      <section  className="home__contener">
         <Info onInfoClose={onInfoClose} show={showInfo} />
 
 
@@ -55,7 +63,7 @@ function HOME() {
           <div className="home">
             <SearchBox  onInfoClick={onInfoClick}/>
 
-            <div className="catogre">
+            <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="catogre">
             <div></div>
             <div></div>
             <div></div>
@@ -65,10 +73,10 @@ function HOME() {
 
 
             </div>
-            <section className="cards__contener">
+            <section dir={SelectedLang == "en" ? `${"rtl"}` : `${"ltr"}`} className="cards__contener">
               <h4 className="title">
-                الاكثر مبعيا{" "}
-                <a className="more_link">
+              <Text tid="bestSeller" />
+                <a className={SelectedLang == "en" ? ' more_link transform_icon' : 'more_link'} >
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -87,7 +95,7 @@ function HOME() {
                   </svg>
                 </a>
               </h4>
-              <div className="cards">
+              <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="cards">
                 {dogName.map((book) => (
                   <div className="card">
                     <img
@@ -95,14 +103,14 @@ function HOME() {
                       alt="avatar"
                     />
                     <p>
-                      {book.volumeInfo.title.length > 16
-                        ? book.volumeInfo.title.substring(0, 16) + "..."
+                      {book.volumeInfo.title.length > 10
+                        ? book.volumeInfo.title.substring(0, 10) + "..."
                         : book.volumeInfo.title}
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 16
-                        ? book.volumeInfo.authors[0].substring(0, 16) + "..."
+                      {book.volumeInfo.authors.length > 10
+                        ? book.volumeInfo.authors[0].substring(0, 10) + "..."
                         : book.volumeInfo.authors[0]}
                     </span>
 
@@ -112,10 +120,10 @@ function HOME() {
               </div>
             </section>
 
-            <section className="cards__contener">
+            <section dir={SelectedLang == "en" ? `${"rtl"}` : `${"ltr"}`} className="cards__contener">
               <h4 className="title">
-                رويات كلاسيكية {" "}
-                <a className="more_link">
+                    <Text tid="classicNovels" />
+                <a className={SelectedLang == "en" ? ' more_link transform_icon' : 'more_link'}>
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -134,7 +142,7 @@ function HOME() {
                   </svg>
                 </a>
               </h4>
-              <div className="cards">
+              <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="cards">
                 {dogName.map((book) => (
                   <div className="card">
                     <img
@@ -142,14 +150,14 @@ function HOME() {
                       alt="avatar"
                     />
                     <p>
-                      {book.volumeInfo.title.length > 16
-                        ? book.volumeInfo.title.substring(0, 16) + "..."
+                      {book.volumeInfo.title.length > 10
+                        ? book.volumeInfo.title.substring(0, 10) + "..."
                         : book.volumeInfo.title}
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 16
-                        ? book.volumeInfo.authors[0].substring(0, 16) + "..."
+                      {book.volumeInfo.authors.length > 10
+                        ? book.volumeInfo.authors[0].substring(0, 10) + "..."
                         : book.volumeInfo.authors[0]}
                     </span>
 
@@ -159,10 +167,10 @@ function HOME() {
               </div>
             </section>
 
-            <section className="cards__contener">
+            <section dir={SelectedLang == "en" ? `${"rtl"}` : `${"ltr"}`} className="cards__contener">
               <h4 className="title">
-                 تاريخ{" "}
-                <a className="more_link">
+                   <Text tid="History" />
+                <a className={SelectedLang == "en" ? ' more_link transform_icon' : 'more_link'}>
                   <svg
                     aria-hidden="true"
                     focusable="false"
@@ -181,7 +189,7 @@ function HOME() {
                   </svg>
                 </a>
               </h4>
-              <div className="cards">
+              <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="cards">
                 {dogName.map((book) => (
                   <div className="card">
                     <img
@@ -189,14 +197,14 @@ function HOME() {
                       alt="avatar"
                     />
                     <p>
-                      {book.volumeInfo.title.length > 14
-                        ?  book.volumeInfo.title.substring(0, 14) + "..."
+                      {book.volumeInfo.title.length > 10
+                        ?  book.volumeInfo.title.substring(0, 10) + "..."
                         : book.volumeInfo.title}
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 14
-                        ? book.volumeInfo.authors[0].substring(0, 14) + "..."
+                      {book.volumeInfo.authors.length > 10
+                        ? book.volumeInfo.authors[0].substring(0, 10) + "..."
                         : book.volumeInfo.authors[0]}
                     </span>
 

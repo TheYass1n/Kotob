@@ -1,11 +1,16 @@
 const en = {
 	logo:'BOOKLUAR',
-	searchPlaceholder:'search book, author, or puplsher',
-  exploreHeader: 'Explore',
-  welcomeDescription: 'This is a demo app  with React Context API',
-  clickMe: 'Click Me',
-  aboutMe: 'For more info about the author',
-  buttonClicked: 'You clicked to button!'
+	searchPlaceholder:'Search book, author, or puplsher',
+	bestSeller : "Best seller" ,
+	classicNovels: "Classic novels",
+	History : "History",
+	title : "Title",
+	author: "Author",
+	publisher: "Publisher" ,
+	publishedDate: " Published Date",
+	read:" read",
+	speakNow: "Speak Now"
+
 };
 
 export default en;
