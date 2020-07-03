@@ -64,12 +64,12 @@ function HOME() {
             <SearchBox  onInfoClick={onInfoClick}/>
 
             <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="catogre">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-<div></div>
-            <div></div>
+            <div>تاريخ</div>
+            <div> فلسفة</div>
+            <div> رويات كلاسكية</div>
+            <div>كتب دينية</div>
+<div>خيال علمي</div>
+            <div>تكنلوجيا</div>
 
 
             </div>

@@ -87,9 +87,38 @@ body {
     margin-right: 2%;
     overflow: scroll;
 }
+
+.catogre div:nth-child(1){
+  background: #4CAF50;
+}
+
+.catogre div:nth-child(2){
+  background: #f44336;
+}
+
+.catogre div:nth-child(3){
+  background: #3F51B5;
+}
+
+.catogre div:nth-child(4){
+  background: #FFC107;
+}
+
+.catogre div:nth-child(5){
+  background: #E91E63;
+}
+
+.catogre div:nth-child(6){
+  background: #009688;
+}
+
 .catogre div{
   min-width: 100px;
     width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
     border-radius: 3px;
     height: 100px;
     box-shadow:inset 0px 0px 3px rgba(0,0,0,0.3);
