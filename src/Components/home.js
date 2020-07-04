@@ -6,7 +6,8 @@ import Info from "../Components/info/index.js";
 import { Text } from '../Components/multi-lang/Language';
 import LinearProgress from '@material/react-linear-progress';
 import '@material/react-linear-progress/dist/linear-progress.css';
-
+import NavBar from '../Components/navBar';
+import { Link } from 'react-router-dom';
 
 
 
@@ -64,12 +65,14 @@ function HOME() {
             <SearchBox  onInfoClick={onInfoClick}/>
 
             <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="catogre">
-            <div>تاريخ</div>
-            <div> فلسفة</div>
-            <div> رويات كلاسكية</div>
-            <div>كتب دينية</div>
-<div>خيال علمي</div>
-            <div>تكنلوجيا</div>
+            <div><Text tid="History" /></div>
+            <div> <Text tid="philosophy" /></div>
+            <div><Text tid="classicNovels" /></div>
+            <div><Text tid="ReligiousBooks" /></div>
+            <div><Text tid="Fiction" /></div>
+            <div><Text tid="technology" /></div>
+            <div> <Link to="/categories"><Text tid="more" /></Link></div>
+
 
 
             </div>
@@ -98,10 +101,13 @@ function HOME() {
               <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="cards">
                 {dogName.map((book) => (
                   <div className="card">
-                    <img
+                  <Link to={{ pathname:"/book", data:{ book: book.volumeInfo} }} >
+                  <img
                       src={book.volumeInfo.imageLinks.smallThumbnail}
                       alt="avatar"
                     />
+                  </Link>
+                    
                     <p>
                       {book.volumeInfo.title.length > 10
                         ? book.volumeInfo.title.substring(0, 10) + "..."
@@ -216,6 +222,7 @@ function HOME() {
           </div>
         </section>
       </section>
+      <NavBar/>
     </>
   );
 }

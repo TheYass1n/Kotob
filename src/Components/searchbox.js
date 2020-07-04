@@ -87,6 +87,7 @@ const SearchBox = (props) => {
               </svg>
             </p>
           <input 
+          dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} 
           onChange={handleChange} 
           placeholder= {SelectedLang == "en" ? "search book, author, or puplsher " :  'ابحث عن كتاب, مؤلف, او دار نشر' }
           type='txt'/>

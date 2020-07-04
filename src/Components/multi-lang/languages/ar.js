@@ -9,7 +9,15 @@ const ar = {
 	publisher: "الناشر" ,
 	publishedDate: "تاريخ النشر",
 	read: "قراء",
-	speakNow: "تحدث الان "
+	speakNow: "تحدث الان ",
+	technology:"تكنولوجيا",
+	philosophy:"فلسفة" ,
+	ReligiousBooks: "كتب دنية",
+	Fiction:"خيال علمي",
+	categories: "التصنيفات",
+	more:"المذيد"
+
+
 
 };
 

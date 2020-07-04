@@ -6,9 +6,11 @@ import { useFetch } from "./Components/http/http";
 import Home from "./Components/home";
 import SreachRusult from "./Components/searchruslut";
 import { LanguageProvider } from "./Components/multi-lang/Language";
-
+import CategoriesNav from './Components/categories/categoriesNav';
 import LanguageSelector from "./Components/multi-lang/LanguageSelector";
 import Modal from "./Components/modal";
+import Book from "./Components/book";
+
 
 
 function App() {
@@ -39,13 +41,20 @@ const handleClose = () =>{
 		    }
 
 				<Switch>
-					<Route exact path="/" component={Home}></Route>
+					<Route  path="/" exact component={Home}></Route>
 					<Route
+						
+						path="/search" 
 						exact
-						path="/search"
-						component={SreachRusult}
-					>
+						component={SreachRusult}>
 					</Route>
+					<Route  
+					exact
+					path="/categories"
+					exact
+					 component={CategoriesNav}>
+					 </Route>
+					<Route exact path="/book"  component={Book}></Route>
 				</Switch>
 			</div>
 		</LanguageProvider>

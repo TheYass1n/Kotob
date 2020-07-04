@@ -56,6 +56,7 @@ body {
 
 .home__content{
   height: fit-content;
+  margin-bottom: 10vh;
 }
 
 .home__contener aside {
@@ -78,7 +79,62 @@ body {
   display: none;
 }
 
+/*categories nav*/
+.categories__nav{
+  display: grid;
+    grid-template-columns: 50% 50%;
+     margin-bottom: 10vh;
 
+}
+
+.categories__contener p{
+  text-align: center;
+    font-size: large;
+    font-weight: 600;
+    margin: .5rem;
+}
+
+.categories__nav a:nth-child(1){
+  background: #4CAF50;
+}
+
+.categories__nav a:nth-child(2){
+  background: #f44336;
+}
+
+.categories__nav a:nth-child(3){
+  background: #3F51B5;
+}
+
+.categories__nav a:nth-child(4){
+  background: #FFC107;
+}
+
+.categories__nav a:nth-child(5){
+  background: #E91E63;
+}
+
+.categories__nav a:nth-child(6){
+  background: #009688;
+}
+
+.categories__nav a{
+  min-width: 92%;
+    margin-bottom: 1rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    min-height: 250px;
+    box-shadow: inset 0px 0px 3px rgba(0,0,0,0.3);
+    margin: auto;
+    margin-bottom: 1rem;
+
+}
+/***********************/
 .transform_icon{  transform: rotate(180deg)}
 .catogre{
   min-height: 14vh;
@@ -112,10 +168,18 @@ body {
   background: #009688;
 }
 
+.catogre div:nth-child(7){
+  background: #8BC34A;
+}
+.catogre div a{
+  text-decoration: none;
+  color: white;
+}
 .catogre div{
   min-width: 100px;
     width: 30%;
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
     color: white;
@@ -335,13 +399,14 @@ input {
   align-self: center;
   margin: auto;
   margin-top: 1rem;
-  text-align: end;
+  text-align: inherit;
   width: 95%;
-
   padding: 1rem;
   border-radius: 3px;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   padding-right: 2.7rem;
+  padding-left: 2.7rem;
+
 }
 
 .search_box h3 {
@@ -361,12 +426,35 @@ input {
     background: white;
 
 }
+
+
+/*nav bar*/
+.nav__bar{
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    background: white;
+    align-items: center;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    position: fixed;
+    bottom: 0px;
+    justify-content: space-around;
+}
+.nav__bar svg{
+  width: 22px;
+  color: var(--icons-color);
+}
+
+.selectedLink svg{
+  color: green;
+}
+
 @media screen and (min-width: 770px) {
   body {
     background-color: white;
   }
   .home__contener {
-    margin-bottom: 1rem;
+    margin-bottom: 10vh;
     display: flex;
     flex-direction: row-reverse;
    position: unset;
