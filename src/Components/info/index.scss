@@ -2,12 +2,13 @@
   background-color: transparent;
   box-sizing: border-box;
   color: transparent;
-  height: 100vh;
   line-height: 1.4;
   overflow: hidden;
   padding: 30px;
   pointer-events: none;
   position: absolute;
+  top:0;
+  bottom:0;
   transition: all .2s .05s ease-out;
   z-index: 1;
 

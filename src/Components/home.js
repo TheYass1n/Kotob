@@ -20,20 +20,21 @@ function HOME() {
   const openModal = () => setShow(true);
   const closeModal = () => setShow(false);
 
+  const SelectedLang = localStorage.getItem('selectedLang');
+
   
   const res = useFetch(
-    "https://www.googleapis.com/books/v1/volumes?q=subject:fiction&key=AIzaSyDPEB6OF1CbUKLIsJqI-2deQJcBZJ1yuDE",
+    "https://www.googleapis.com/books/v1/volumes?q=subject:fiction&langRestrict=ar&key=AIzaSyDPEB6OF1CbUKLIsJqI-2deQJcBZJ1yuDE",
     {}
   );
 
   
-  console.log("History ==== ", res);
+  console.log("subject:fiction ==== ", res);
   if (!res.response) {
     return  <LinearProgress  buffer={0.9} indeterminate={true}  />;
   }
 
   //get the Languagen that user choose
-  const SelectedLang = localStorage.getItem('selectedLang');
 
   const dogName = res.response.items;
   console.log("dog", dogName);
