@@ -24,7 +24,7 @@ function HOME() {
 
   
   const res = useFetch(
-    "https://www.googleapis.com/books/v1/volumes?q=subject:fiction&langRestrict=ar&key=AIzaSyDPEB6OF1CbUKLIsJqI-2deQJcBZJ1yuDE",
+    "https://www.googleapis.com/books/v1/volumes?q=subject:fiction&langRestrict=ar",
     {}
   );
 
@@ -81,22 +81,7 @@ function HOME() {
               <h4 className="title">
               <Text tid="bestSeller" />
                 <a className={SelectedLang == "en" ? ' more_link transform_icon' : 'more_link'} >
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fal"
-                    data-icon="arrow-left"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    class="svg-inline--fa fa-arrow-left fa-w-14 fa-fw fa-lg"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
-                      class=""
-                    ></path>
-                  </svg>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-chevron-left fa-w-8 fa-flip-horizontal fa-flip-vertical fa-5x"><path fill="currentColor" d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg>
                 </a>
               </h4>
               <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="cards">
@@ -131,22 +116,7 @@ function HOME() {
               <h4 className="title">
                     <Text tid="classicNovels" />
                 <a className={SelectedLang == "en" ? ' more_link transform_icon' : 'more_link'}>
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fal"
-                    data-icon="arrow-left"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    class="svg-inline--fa fa-arrow-left fa-w-14 fa-fw fa-lg"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
-                      class=""
-                    ></path>
-                  </svg>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-chevron-left fa-w-8 fa-flip-horizontal fa-flip-vertical fa-5x"><path fill="currentColor" d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg>
                 </a>
               </h4>
               <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="cards">
@@ -178,22 +148,7 @@ function HOME() {
               <h4 className="title">
                    <Text tid="History" />
                 <a className={SelectedLang == "en" ? ' more_link transform_icon' : 'more_link'}>
-                  <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fal"
-                    data-icon="arrow-left"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    class="svg-inline--fa fa-arrow-left fa-w-14 fa-fw fa-lg"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
-                      class=""
-                    ></path>
-                  </svg>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-chevron-left fa-w-8 fa-flip-horizontal fa-flip-vertical fa-5x"><path fill="currentColor" d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z" class=""></path></svg>
                 </a>
               </h4>
               <div dir={SelectedLang == "en" ? `${"ltr"}` : `${"rtl"}`} className="cards">

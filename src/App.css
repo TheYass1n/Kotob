@@ -277,7 +277,7 @@ margin-bottom:7px;
 }
 .title {
   text-align: end;
-  margin: 10px;
+  margin: 2%;
 font-family: roboto;
   color: var(--book-title);
   display: flex;
@@ -295,7 +295,7 @@ input::placeholder{
   align-self: flex-end;
 }
 .more_link svg {
-  width: 14px;
+  width: 10px;
 }
 .search__result .card {
   display: flex;
@@ -427,8 +427,110 @@ input {
     background: white;
 
 }
-/******book component******/
+/***** custom scroll bar******/
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius:50%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/********suggested books**********/
+.suggested__books {
+  display: flex;
+  width: 100%;
+  overflow:scroll;
+}
+.suggested__books .book_rof{
+  margin:.5rem;
+}
+.suggested__books img{
+  width: 100px;
+  border-radius: 3px;
+  height: 150px;
+}
+.suggested__books .book_rof p{
+  font-size: 14px;
+    font-weight: 800;
+    color: #635e5ea8;
+    margin: 6px 0;
+    text-align: initial;
+}
+.suggested__books .book_rof span{
+  font-size: 12px;
+    color: #635e5ea8;
+    display: flex;
+    margin-top: 9px;
+}
+
+/******book component******/
+.book .boook__details{
+  display: flex;
+  padding: 6px;
+}
+
+.book .boook__details .details{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin:0 10px;
+}
+.book .boook__details img{
+  border-radius: 3px;
+}
+.book .boook__details .details span{
+  margin-top: .5rem;
+}
+.book .boook__details .details svg{
+  width: 20px;
+  fill: green;
+}
+
+.book .boook__details .details .read__link{
+  display: flex;
+   padding: 4px 10px;
+  width: 70px;
+  justify-content: space-between;
+  margin-top: .5rem;
+  border: 1px solid  #80808057;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+.book  .navs{
+  width: 100%;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    /* margin: 6px; */
+    padding: 7px;
+}
+
+.book .description{
+  padding: 6px;
+}
+
+.book .navs svg{
+  width: 20px;
+}
 /*nav bar*/
 .nav__bar{
     width: 100%;
