@@ -367,8 +367,8 @@ input::placeholder{
   flex-direction: column;
 }
 .search__result .card img {
-  width: 30%;
-  align-self: flex-end;
+/*  width: 30%;
+*/  align-self: flex-end;
 }
 
 .search_box a,
@@ -427,7 +427,13 @@ input {
     background: white;
 
 }
+
+
+
+
 /***** custom scroll bar******/
+
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -455,6 +461,10 @@ input {
   width: 100%;
   overflow:scroll;
 }
+.suggested__books::-webkit-scrollbar, 
+.Suggested_Books_contener::-webkit-scrollbar{
+  display: none;
+}
 .suggested__books .book_rof{
   margin:.5rem;
 }
@@ -477,10 +487,16 @@ input {
     margin-top: 9px;
 }
 
+.suggested__books__title{
+  padding: 6px;
+  font-weight: 800;
+}
+
 /******book component******/
 .book .boook__details{
   display: flex;
   padding: 6px;
+  font-size:small;
 }
 
 .book .boook__details .details{
@@ -521,15 +537,23 @@ input {
     justify-content: space-between;
     height: 8vh;
     /* margin: 6px; */
-    padding: 7px;
+    padding: 14px;
+    border-bottom: .4px solid #00000045;
 }
-
+.book .book__description__title{
+  font-weight: 800;
+  padding: 6px;
+  margin-top: .5rem;
+}
 .book .description{
   padding: 6px;
+  font-size: small;
+  margin-bottom:.5rem 0;
 }
 
 .book .navs svg{
   width: 20px;
+  color: var(--icons-color)
 }
 /*nav bar*/
 .nav__bar{
@@ -543,12 +567,26 @@ input {
     bottom: 0px;
     justify-content: space-around;
 }
+
+.nav__bar a{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav__bar a p{
+  font-size: small;
+  margin-top: 5px;
+  color: var(--icons-color)
+}
 .nav__bar svg{
   width: 22px;
   color: var(--icons-color);
 }
 
-.selectedLink svg{
+.selectedLink svg, .selectedLink p{
   color: green;
 }
 

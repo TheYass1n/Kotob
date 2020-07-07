@@ -43,10 +43,14 @@ const fetchData = async () => {
     return (
         <>
         { !response ? <div>loading </div> :
+        	<div>
+        	<p className="suggested__books__title">كتب مقترحة</p>
         <div className="suggested__books">
         { SuggestedBooks.map((book) =>(
         	<div className="book_rof">
+        	    <Link to={{ pathname:"/book", data:{ book: book.volumeInfo} }} >
         	<img src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : null} alt=""/>
+        	    </Link>
         	<div className="suggested__books__details">
         	<p>{book.volumeInfo.title.length > 10
                         ? book.volumeInfo.title.substring(0, 10) + "..."
@@ -57,6 +61,7 @@ const fetchData = async () => {
         	</div>
         ))}
         	
+        </div>
         </div>
         }
         </>

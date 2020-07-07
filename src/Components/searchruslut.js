@@ -144,6 +144,7 @@ const SearchRusults = () => {
 					{rusluts.map((item) => (
 						<div dir={SelectedLang == "en" ? `${"rtl"}` : `${"ltr"}`} key={item.id} className="card">
 							<div className="details">
+							<Link to={{ pathname:"/book", data:{ book: item.volumeInfo} }} >
 								<img
 									src={
 										item.volumeInfo.imageLinks
@@ -153,6 +154,7 @@ const SearchRusults = () => {
 									}
 									alt="avatar"
 								/>
+								</Link>
 								<div className="book_details">
 									<h4>
 										{<b> <Text tid="title"/>  : </b>}
