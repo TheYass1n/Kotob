@@ -578,8 +578,8 @@ input {
 
 .nav__bar a p{
   font-size: small;
-  margin-top: 5px;
-  color: var(--icons-color)
+/*  margin-top: 5px;
+*/  color: var(--icons-color)
 }
 .nav__bar svg{
   width: 22px;
