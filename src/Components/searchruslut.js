@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Text } from '../Components/multi-lang/Language';
+import { booksUrl } from "../Components/http/books";
 
 
 const SelectedLang = localStorage.getItem('selectedLang');
@@ -44,13 +45,11 @@ const SearchRusults = () => {
 			const fetchData = async () => {
 				try {
 					const res = await fetch(
-						"https://www.googleapis.com/books/v1/volumes?q=" +
-							transccript +
-							""
+						booksUrl(transccript)
 					);
 					const json = await res.json();
 					console.log("response ===", json);
-					setResponse(json.items);
+					setResponse(json.items || []);
 				} catch (error) {
 					setError(error);
 				}
@@ -71,13 +70,11 @@ const SearchRusults = () => {
 		const fetchData = async () => {
 			try {
 				const res = await fetch(
-					"https://www.googleapis.com/books/v1/volumes?q=" +
-						searchQ +
-						""
+					booksUrl(searchQ)
 				);
 				const json = await res.json();
 				console.log("response ===", json);
-				setResponse(json.items);
+				setResponse(json.items || []);
 			} catch (error) {
 				setError(error);
 			}
