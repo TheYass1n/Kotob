@@ -1,6 +1,7 @@
 import React,{ useEffect } from 'react';
 import { useFetch } from "../Components/http/http";
 import { Link } from 'react-router-dom';
+import { booksUrl } from "../Components/http/books";
 
 
 const SuggestedBooks = (props) => {
@@ -17,13 +18,11 @@ const title = books.title;
 const fetchData = async () => {
 				try {
 					const res = await fetch(
-						"https://www.googleapis.com/books/v1/volumes?q=" +
-							title + ""
-							
+						booksUrl(title)
 					);
 					const json = await res.json();
 					console.log("response ===", json);
-					setResponse(json.items);
+					setResponse(json.items || []);
 				} catch (error) {
 					setError(error);
 				}

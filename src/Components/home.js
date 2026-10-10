@@ -8,6 +8,7 @@ import LinearProgress from '@material/react-linear-progress';
 import '@material/react-linear-progress/dist/linear-progress.css';
 import NavBar from '../Components/navBar';
 import { Link } from 'react-router-dom';
+import { booksUrl } from "../Components/http/books";
 
 
 
@@ -24,7 +25,8 @@ function HOME() {
 
   
   const res = useFetch(
-    "https://www.googleapis.com/books/v1/volumes?q=subject:fiction&langRestrict=ar",
+    // Google Books no longer returns results for "subject:" queries, so search for "novel" in Arabic.
+    booksUrl("رواية", "&langRestrict=ar&maxResults=20"),
     {}
   );
 
@@ -36,7 +38,7 @@ function HOME() {
 
   //get the Languagen that user choose
 
-  const dogName = res.response.items;
+  const dogName = res.response.items || [];
   console.log("dog", dogName);
 
 
@@ -89,7 +91,7 @@ function HOME() {
                   <div className="card">
                   <Link to={{ pathname:"/book", data:{ book: book.volumeInfo} }} >
                   <img
-                      src={book.volumeInfo.imageLinks.smallThumbnail}
+                      src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : null}
                       alt="avatar"
                     />
                   </Link>
@@ -101,9 +103,11 @@ function HOME() {
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 10
-                        ? book.volumeInfo.authors[0].substring(0, 10) + "..."
-                        : book.volumeInfo.authors[0]}
+                      {book.volumeInfo.authors
+                        ? book.volumeInfo.authors[0].length > 10
+                          ? book.volumeInfo.authors[0].substring(0, 10) + "..."
+                          : book.volumeInfo.authors[0]
+                        : null}
                     </span>
 
                     <div></div>
@@ -123,7 +127,7 @@ function HOME() {
                 {dogName.map((book) => (
                   <div className="card">
                     <img
-                      src={book.volumeInfo.imageLinks.smallThumbnail}
+                      src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : null}
                       alt="avatar"
                     />
                     <p>
@@ -133,9 +137,11 @@ function HOME() {
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 10
-                        ? book.volumeInfo.authors[0].substring(0, 10) + "..."
-                        : book.volumeInfo.authors[0]}
+                      {book.volumeInfo.authors
+                        ? book.volumeInfo.authors[0].length > 10
+                          ? book.volumeInfo.authors[0].substring(0, 10) + "..."
+                          : book.volumeInfo.authors[0]
+                        : null}
                     </span>
 
                     <div></div>
@@ -155,7 +161,7 @@ function HOME() {
                 {dogName.map((book) => (
                   <div className="card">
                     <img
-                      src={book.volumeInfo.imageLinks.smallThumbnail}
+                      src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : null}
                       alt="avatar"
                     />
                     <p>
@@ -165,9 +171,11 @@ function HOME() {
                     </p>
 
                     <span>
-                      {book.volumeInfo.authors.length > 10
-                        ? book.volumeInfo.authors[0].substring(0, 10) + "..."
-                        : book.volumeInfo.authors[0]}
+                      {book.volumeInfo.authors
+                        ? book.volumeInfo.authors[0].length > 10
+                          ? book.volumeInfo.authors[0].substring(0, 10) + "..."
+                          : book.volumeInfo.authors[0]
+                        : null}
                     </span>
 
                     <div></div>
